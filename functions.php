@@ -140,7 +140,6 @@ function ark_instagram_headline() {
 	<?php
 }
 
-
 /*
 * Display the custom theme options fields.
 */

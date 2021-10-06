@@ -25,7 +25,7 @@ body {
 }
 
 *::-webkit-scrollbar-thumb {
-	background-color: var(--highlight);
+	background-color: var(--secondary);
 }
 
 *::-webkit-scrollbar-track {
@@ -169,8 +169,8 @@ header.nav li a[aria-current] {
 }
 
 .announcement {
-	background: var(--highlight);
-	color: #fff;
+	background: var(--secondary);
+	color: var(--highlight);
 	padding: 12px 0px;
 	text-align: center;
 	font-weight: 400;
@@ -340,8 +340,8 @@ header.nav li a[aria-current] {
 
 footer {
 	padding: 60px 168px;
-	background: var(--highlight);
-	color: #fff;
+	background: var(--secondary);
+	color: var(--highlight);
 	grid-row-gap: 0px !important;
 	position: relative;
 	top: 135px;
@@ -394,7 +394,7 @@ footer .section-share i {
 }
 
 footer .section-share a {
-	color: #fff;
+	color: var(--highlight);
 }
 
 footer .section-share i:hover {
@@ -498,5 +498,22 @@ footer .section-share i:hover {
 
 .home-container .main-container.archive .headline {
 	text-align: center;
-	margin-bottom: 30px;
+}
+
+.home-container .main-container.archive .cta-articles {
+	padding: 12px 30px;
+	background: var(--highlight);
+	display: inline-block;
+	border-radius: 7px;
+	color: #fff;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	text-transform: uppercase;
+	font-weight: 400;
+	margin-bottom: 50px;
+}
+
+.home-container .main-container.archive .grid-layout {
+	margin-bottom: -50px;
 }

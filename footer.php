@@ -1,5 +1,13 @@
 	<footer class="grid-layout _4-grid">
-		<img class="logo" src="https://i.gyazo.com/edbe81cd9cca2d2988ecf8a76b22ada2.png" />
+		<?php
+			if (function_exists("the_custom_logo")) {
+				$custom_logo_id	= get_theme_mod("custom_logo");
+				$logo			= wp_get_attachment_image_src($custom_logo_id, "full");
+			}
+		?>
+		<a href="<?php echo get_home_url(); ?>">
+			<img class="logo" src="<?php echo $logo[0] ?>" alt="logo" />
+		</a>
 		<div class="section-contact">
 			<h3>Contact</h3>
 			<p>contact@tantinotte.bio</p>

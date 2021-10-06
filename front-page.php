@@ -55,12 +55,15 @@
 						$loop	= new WP_Query($args);
 
 						while ($loop->have_posts()) : $loop->the_post();
-							get_template_part("template-parts/content", "home-archive");
+							get_template_part("template-parts/content", "archive");
 						endwhile;
 
 						wp_reset_query();
 					?>
 			</div>
+			<a href="<?php echo get_post_type_archive_link('post'); ?>">
+				<div class="cta-articles">Voir tous les articles</div>
+			</a>
 		</div>
 		<!-- End Blog -->
 
