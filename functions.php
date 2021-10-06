@@ -141,6 +141,15 @@ function ark_instagram_headline() {
 }
 
 /*
+* Create the instagram feed switch.
+*/
+function ark_blog_display() {
+	?>
+		<input type="checkbox" name="blog_display" id="blog_display" value="1" <?php checked("1", get_option("blog_display")); ?> />
+	<?php
+}
+
+/*
 * Display the custom theme options fields.
 */
 function ark_admin_fields() {
@@ -171,11 +180,13 @@ function ark_admin_fields() {
 	add_settings_field("product_gallery", "Product Gallery", "ark_product_gallery", "theme-options", "homepage");
 	add_settings_field("instagram_feed", "Instagram Feed", "ark_instagram_feed", "theme-options", "homepage");
 	add_settings_field("instagram_headline", "Instagram Headline", "ark_instagram_headline", "theme-options", "homepage");
+	add_settings_field("blog_display", "Blog Display", "ark_blog_display", "theme-options", "homepage");
 
 	register_setting("section", "slider");
 	register_setting("section", "product_gallery");
 	register_setting("section", "instagram_feed");
 	register_setting("section", "instagram_headline");
+	register_setting("section", "blog_display");
 }
 
 add_action("admin_init", "ark_admin_fields");

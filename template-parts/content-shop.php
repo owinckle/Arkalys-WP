@@ -1,9 +1,9 @@
 <?php
-	$id		= get_the_ID();
+	$id			= get_the_ID();
 	$product	= wc_get_product($id);
 	$title		= get_the_title();
 	$price		= wc_price($product->get_price());
-	$permalink	= get_permalink($product->ID);
+	$permalink	= get_permalink($product->get_id());
 	$rating		= $product->get_average_rating();
 	$count		= $product->get_rating_count();
 ?>

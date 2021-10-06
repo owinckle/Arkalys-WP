@@ -43,28 +43,30 @@
 		<!-- The Content -->
 
 		<!-- Blog -->
-		<div class="main-container archive">
-			<h2 class="headline">Le Blog</h2>
-			<div class="archive-container grid-layout _3-grid">
-				<?php
-						$args	= array(
-							"post_type"			=> "post",
-							"posts_per_page"	=> 3
-						);
+		<?php if (get_option("blog_display")) { ?>
+			<div class="main-container archive">
+				<h2 class="headline">Le Blog</h2>
+				<div class="archive-container grid-layout _3-grid">
+					<?php
+							$args	= array(
+								"post_type"			=> "post",
+								"posts_per_page"	=> 3
+							);
 
-						$loop	= new WP_Query($args);
+							$loop	= new WP_Query($args);
 
-						while ($loop->have_posts()) : $loop->the_post();
-							get_template_part("template-parts/content", "archive");
-						endwhile;
+							while ($loop->have_posts()) : $loop->the_post();
+								get_template_part("template-parts/content", "archive");
+							endwhile;
 
-						wp_reset_query();
-					?>
+							wp_reset_query();
+						?>
+				</div>
+				<a href="<?php echo get_post_type_archive_link('post'); ?>">
+					<div class="cta-articles">Voir tous les articles</div>
+				</a>
 			</div>
-			<a href="<?php echo get_post_type_archive_link('post'); ?>">
-				<div class="cta-articles">Voir tous les articles</div>
-			</a>
-		</div>
+		<?php } ?>
 		<!-- End Blog -->
 
 		<!-- Instagram -->
