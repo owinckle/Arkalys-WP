@@ -132,6 +132,16 @@ function ark_instagram_feed() {
 }
 
 /*
+* Create the instagram headline field.
+*/
+function ark_instagram_headline() {
+	?>
+		<input style="width:100%" type="text" name="instagram_headline" id="instagram_headline" value="<?php echo get_option('instagram_headline'); ?>" />
+	<?php
+}
+
+
+/*
 * Display the custom theme options fields.
 */
 function ark_admin_fields() {
@@ -161,10 +171,12 @@ function ark_admin_fields() {
 	add_settings_field("slider", "Smart Slider 3 ID", "ark_slider", "theme-options", "homepage");
 	add_settings_field("product_gallery", "Product Gallery", "ark_product_gallery", "theme-options", "homepage");
 	add_settings_field("instagram_feed", "Instagram Feed", "ark_instagram_feed", "theme-options", "homepage");
+	add_settings_field("instagram_headline", "Instagram Headline", "ark_instagram_headline", "theme-options", "homepage");
 
 	register_setting("section", "slider");
 	register_setting("section", "product_gallery");
 	register_setting("section", "instagram_feed");
+	register_setting("section", "instagram_headline");
 }
 
 add_action("admin_init", "ark_admin_fields");
@@ -174,13 +186,13 @@ add_action("admin_init", "ark_admin_fields");
 */
 function ark_admin_messages() {
 	include_once(ABSPATH."wp-admin/includes/plugin.php");
-
 	if (!is_plugin_active("smart-slider-3/smart-slider-3.php")) {
 		echo '<div id="alert" class="error">';
 		echo '<p>This theme requires you to install <a target="_blank" href="https://wordpress.org/plugins/smart-slider-3/">Smart Slider 3.</a></p>';
 		echo '</div>';
 	}
 }
+
 
 add_action("admin_notices", "ark_admin_messages");
 

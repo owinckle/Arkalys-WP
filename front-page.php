@@ -45,8 +45,14 @@
 		<!-- Instagram -->
 		<?php if (get_option("instagram_feed")) { ?>
 			<div class="instagram">
-				<h2 class="headline">Suivez nous sur Instagram!</h2>
+				<?php if (get_option("instagram_url")) { ?>
+					<a href="<?php echo get_option('instagram_url'); ?>" target="_blank">
+						<h2 class="headline"><?php echo get_option("instagram_headline"); ?></h2>
+					</a>
+				<?php } else { ?>
+					<h2 class="headline"><?php echo get_option("instagram_headline"); ?></h2>
 				<?php
+					}
 					echo do_shortcode("[instagram-feed num=9 cols=3]");
 				?>
 			</div>
