@@ -212,6 +212,12 @@ function ark_admin_messages() {
 		echo '<p>This theme requires you to install <a target="_blank" href="https://wordpress.org/plugins/smart-slider-3/">Smart Slider 3.</a></p>';
 		echo '</div>';
 	}
+
+	if (!is_plugin_active("site-reviews/site-reviews.php")) {
+		echo '<div id="alert" class="error">';
+		echo '<p>This theme requires you to install <a target="_blank" href="https://wordpress.org/plugins/site-reviews/">Site Reviews.</a></p>';
+		echo '</div>';
+	}
 }
 
 

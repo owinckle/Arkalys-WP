@@ -42,6 +42,19 @@
 		?>
 		<!-- The Content -->
 
+		<!-- Testimonials -->
+		<?php if (get_option("testimonials")) { ?>
+			<div class="main-container testimonials">
+				<?php
+					echo do_shortcode("[site_reviews display='3']");
+				?>
+				<a href="<?php echo get_post_type_archive_link('post'); ?>">
+					<div class="cta-testimonials">Tous les avis</div>
+				</a>
+			</div>
+		<?php } ?>
+		<!-- End Testimonials -->
+
 		<!-- Blog -->
 		<?php if (get_option("blog_display")) { ?>
 			<div class="main-container archive">

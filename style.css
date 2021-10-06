@@ -492,7 +492,7 @@ footer .section-share i:hover {
 }
 
 .home-container .main-container.archive {
-	padding-top: 0px;
+	padding-top: 50px;
 	top: 0px;
 }
 
@@ -500,7 +500,8 @@ footer .section-share i:hover {
 	text-align: center;
 }
 
-.home-container .main-container.archive .cta-articles {
+.home-container .main-container.archive .cta-articles,
+.home-container .main-container.testimonials .cta-testimonials {
 	padding: 12px 30px;
 	background: var(--highlight);
 	display: inline-block;
@@ -514,6 +515,20 @@ footer .section-share i:hover {
 	margin-bottom: 50px;
 }
 
+.home-container .main-container.testimonials .cta-testimonials {
+	margin-bottom: 0px;
+}
+
 .home-container .main-container.archive .grid-layout {
 	margin-bottom: -50px;
+}
+
+.main-container.testimonials {
+	top: 0px;
+	padding: 60px 168px;
+}
+
+.glsr-reviews {
+	grid-template-columns: 1fr 1fr 1fr;
+	margin-bottom: 50px;
 }
