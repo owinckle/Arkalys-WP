@@ -2,7 +2,7 @@
 	get_header();
 ?>
 
-	<div class="main-container">
+	<div class="main-container home-container">
 		<!-- Slider -->
 		<?php
 			$slider_id	= get_option("slider");
@@ -41,6 +41,28 @@
 			the_content();
 		?>
 		<!-- The Content -->
+
+		<!-- Blog -->
+		<div class="main-container archive">
+			<h2 class="headline">Le Blog</h2>
+			<div class="archive-container grid-layout _3-grid">
+				<?php
+						$args	= array(
+							"post_type"			=> "post",
+							"posts_per_page"	=> 3
+						);
+
+						$loop	= new WP_Query($args);
+
+						while ($loop->have_posts()) : $loop->the_post();
+							get_template_part("template-parts/content", "home-archive");
+						endwhile;
+
+						wp_reset_query();
+					?>
+			</div>
+		</div>
+		<!-- End Blog -->
 
 		<!-- Instagram -->
 		<?php if (get_option("instagram_feed")) { ?>
