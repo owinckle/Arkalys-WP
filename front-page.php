@@ -43,11 +43,14 @@
 		<!-- The Content -->
 
 		<!-- Instagram -->
-		<div class="instagram">
-			<?php
-				echo do_shortcode("[instagram-feed num=9 cols=3]");
-			?>
-		</div>
+		<?php if (get_option("instagram_feed")) { ?>
+			<div class="instagram">
+				<h2 class="headline">Suivez nous sur Instagram!</h2>
+				<?php
+					echo do_shortcode("[instagram-feed num=9 cols=3]");
+				?>
+			</div>
+		<?php } ?>
 		<!-- End Instagram -->
 
 		<!-- Newsletter -->

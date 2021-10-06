@@ -117,13 +117,19 @@ function ark_slider() {
 * Create the product gallery switch.
 */
 function ark_product_gallery() {
-	$is_checked	= get_option("product_gallery");
 	?>
 		<input type="checkbox" name="product_gallery" id="product_gallery" value="1" <?php checked("1", get_option("product_gallery")); ?> />
 	<?php
 }
 
-	
+/*
+* Create the instagram feed switch.
+*/
+function ark_instagram_feed() {
+	?>
+		<input type="checkbox" name="instagram_feed" id="instagram_feed" value="1" <?php checked("1", get_option("instagram_feed")); ?> />
+	<?php
+}
 
 /*
 * Display the custom theme options fields.
@@ -154,9 +160,11 @@ function ark_admin_fields() {
 
 	add_settings_field("slider", "Smart Slider 3 ID", "ark_slider", "theme-options", "homepage");
 	add_settings_field("product_gallery", "Product Gallery", "ark_product_gallery", "theme-options", "homepage");
+	add_settings_field("instagram_feed", "Instagram Feed", "ark_instagram_feed", "theme-options", "homepage");
 
 	register_setting("section", "slider");
 	register_setting("section", "product_gallery");
+	register_setting("section", "instagram_feed");
 }
 
 add_action("admin_init", "ark_admin_fields");
