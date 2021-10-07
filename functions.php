@@ -7,6 +7,7 @@ function ark_setup() {
 	// Add dynamic title tag support
 	add_theme_support("title-tag");
 	add_theme_support("custom-logo");
+	add_theme_support("woocommerce");
 
 	// Register menus
 	$locations	= array(
@@ -263,14 +264,3 @@ function reading_time() {
 	$totalreadingtime = $readingtime . $timer;
 	return $totalreadingtime;
 }
-
-/*
-* Woocommerce
-*/
-function ark_woocommerce_support() {
-	add_theme_support("woocommerce");
-}
-
-add_action("after_setup_theme", "ark_woocommerce_support");
-
-?>
