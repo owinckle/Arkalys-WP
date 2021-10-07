@@ -45,8 +45,12 @@
 		<!-- Testimonials -->
 		<?php if (get_option("testimonials")) { ?>
 			<div class="main-container testimonials">
-				<h2 class="headline">Nos avis</h2>
 				<?php
+
+					if (get_option("testimonials_headline")) {
+						echo '<h2 class="headline">' . get_option("testimonials_headline") . '</h2>';
+					}
+
 					echo do_shortcode("[site_reviews display='3']");
 				?>
 				<a href="<?php echo get_post_type_archive_link('post'); ?>">
@@ -59,7 +63,13 @@
 		<!-- Blog -->
 		<?php if (get_option("blog_display")) { ?>
 			<div class="main-container archive">
-				<h2 class="headline">Le Blog</h2>
+				<?php
+
+					if (get_option("blog_headline")) {
+						echo '<h2 class="headline">' . get_option("blog_headline") . '</h2>';
+					}
+
+				?>
 				<div class="archive-container grid-layout _3-grid">
 					<?php
 							$args	= array(
