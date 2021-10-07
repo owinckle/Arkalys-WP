@@ -150,11 +150,29 @@ function ark_blog_display() {
 }
 
 /*
+* Create the blog headline field.
+*/
+function ark_blog_headline() {
+	?>
+		<input style="width:100%" type="text" name="blog_headline" id="blog_headline" value="<?php echo get_option('blog_headline'); ?>" />
+	<?php
+}
+
+/*
 * Create the testimonials switch.
 */
 function ark_testimonials() {
 	?>
 		<input type="checkbox" name="testimonials" id="testimonials" value="1" <?php checked("1", get_option("testimonials")); ?> />
+	<?php
+}
+
+/*
+* Create the testimonials headline field.
+*/
+function ark_testimonials_headline() {
+	?>
+		<input style="width:100%" type="text" name="testimonials_headline" id="testimonials_headline" value="<?php echo get_option('testimonials_headline'); ?>" />
 	<?php
 }
 
@@ -190,14 +208,18 @@ function ark_admin_fields() {
 	add_settings_field("instagram_feed", "Instagram Feed", "ark_instagram_feed", "theme-options", "homepage");
 	add_settings_field("instagram_headline", "Instagram Headline", "ark_instagram_headline", "theme-options", "homepage");
 	add_settings_field("blog_display", "Blog Display", "ark_blog_display", "theme-options", "homepage");
+	add_settings_field("blog_headline", "Blog Headline", "ark_blog_headline", "theme-options", "homepage");
 	add_settings_field("testimonials", "Testimonials", "ark_testimonials", "theme-options", "homepage");
+	add_settings_field("testimonials_headline", "Testimonials Headline", "ark_testimonials_headline", "theme-options", "homepage");
 
 	register_setting("section", "slider");
 	register_setting("section", "product_gallery");
 	register_setting("section", "instagram_feed");
 	register_setting("section", "instagram_headline");
 	register_setting("section", "blog_display");
+	register_setting("section", "blog_headline");
 	register_setting("section", "testimonials");
+	register_setting("section", "testimonials_headline");
 }
 
 add_action("admin_init", "ark_admin_fields");
