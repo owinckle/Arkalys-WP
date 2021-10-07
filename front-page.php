@@ -45,6 +45,7 @@
 		<!-- Testimonials -->
 		<?php if (get_option("testimonials")) { ?>
 			<div class="main-container testimonials">
+				<h2 class="headline">Nos avis</h2>
 				<?php
 					echo do_shortcode("[site_reviews display='3']");
 				?>

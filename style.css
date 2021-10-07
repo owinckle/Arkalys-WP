@@ -521,6 +521,7 @@ footer .section-share i:hover {
 
 .home-container .main-container.archive .grid-layout {
 	margin-bottom: -50px;
+	margin-top: -20px;
 }
 
 .main-container.testimonials {
@@ -531,4 +532,9 @@ footer .section-share i:hover {
 .glsr-reviews {
 	grid-template-columns: 1fr 1fr 1fr;
 	margin-bottom: 50px;
+}
+
+.home-container .main-container.testimonials .headline {
+	text-align: center;
+	margin-bottom: 30px;
 }
