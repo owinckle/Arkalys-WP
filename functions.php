@@ -264,3 +264,17 @@ function reading_time() {
 	$totalreadingtime = $readingtime . $timer;
 	return $totalreadingtime;
 }
+
+/*
+* Custom Woocommerce hooks
+*/
+function ark_echo_qty_before_add_cart() {
+	echo '<div class="qty-container"><div class="qty-label">Quantity</div>';
+}
+
+function ark_echo_qty_after_add_cart() {
+	echo '</div>';
+}
+
+add_action("woocommerce_before_add_to_cart_quantity", "ark_echo_qty_before_add_cart");
+add_action("woocommerce_after_add_to_cart_quantity", "ark_echo_qty_after_add_cart");
