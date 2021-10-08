@@ -276,5 +276,15 @@ function ark_echo_qty_after_add_cart() {
 	echo '</div>';
 }
 
+function ark_echo_before_after_single_product_summary() {
+	echo '<div class="info-container">';
+}
+
+function ark_echo_before_before_similar_product() {
+	echo '</div>';
+}
+
 add_action("woocommerce_before_add_to_cart_quantity", "ark_echo_qty_before_add_cart");
 add_action("woocommerce_after_add_to_cart_quantity", "ark_echo_qty_after_add_cart");
+add_action("woocommerce_after_single_product_summary", "ark_echo_before_after_single_product_summary", 5);
+add_action("woocommerce_after_single_product_summary", "ark_echo_before_before_similar_product");
