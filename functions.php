@@ -8,6 +8,9 @@ function ark_setup() {
 	add_theme_support("title-tag");
 	add_theme_support("custom-logo");
 	add_theme_support("woocommerce");
+	add_theme_support("wc-product-gallery-zoom");
+    add_theme_support("wc-product-gallery-lightbox");
+    add_theme_support("wc-product-gallery-slider");
 
 	// Register menus
 	$locations	= array(
@@ -239,6 +242,12 @@ function ark_admin_messages() {
 	if (!is_plugin_active("site-reviews/site-reviews.php")) {
 		echo '<div id="alert" class="error">';
 		echo '<p>This theme requires you to install <a target="_blank" href="https://wordpress.org/plugins/site-reviews/">Site Reviews.</a></p>';
+		echo '</div>';
+	}
+
+	if (!is_plugin_active("side-cart-woocommerce/xoo-wsc-main.php")) {
+		echo '<div id="alert" class="error">';
+		echo '<p>This theme requires you to install <a target="_blank" href="https://wordpress.org/plugins/side-cart-woocommerce/">Side Cart Woocommerce.</a></p>';
 		echo '</div>';
 	}
 }
