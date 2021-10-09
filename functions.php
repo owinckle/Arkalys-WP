@@ -259,7 +259,7 @@ add_action("admin_notices", "ark_admin_messages");
 /*
 * Get article read time
 */
-function reading_time() {
+function reading_time($post) {
 	$content = get_post_field( 'post_content', $post->ID );
 	$word_count = str_word_count( strip_tags( $content ) );
 	$readingtime = ceil($word_count / 200);
