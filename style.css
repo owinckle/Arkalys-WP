@@ -8,14 +8,14 @@ Author: Arkalys
 Author URI: http://www.oceanwinckler.com
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');*/
 
 body {
 	margin: 0;
 	font-size: 17px;
 	font-weight: 400;
 	letter-spacing: 1px;
-	font-family: "Mulish", sans-serif !important;
+	font-family: "Roboto", sans-serif !important;
 }
 
 :root {
@@ -108,7 +108,7 @@ p, h1, h2, h3, h4, h5, h6 {
 	border-radius: 4px;
 	font-size: 16px;
 	font-weight: 700;
-	font-family: 'Mulish';
+	font-family: "Roboto", sans-serif;
 	color: rgba(0, 0, 0, .7);
 }
 
@@ -134,11 +134,20 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 header.nav {
-	padding: 25px 35px;
+	padding: 25px 168px;
 	display: flex;
-	width: calc(100% - 70px);
+	width: calc(100% - 336px);
 	align-items: center;
 	justify-content: space-between;
+	background: #fff;
+}
+
+header.nav.home-nav {
+	background: transparent;
+	transition: background .3s ease;
+}
+
+.scroll header.nav.home-nav {
 	background: #fff;
 }
 
@@ -153,7 +162,7 @@ header.nav .logo {
 header.nav li {
 	margin-right: 15px;
 	padding: 5px 15px;
-	font-size: 14px;
+	font-size: 18px;
 	color: #000;
 	font-weight: 700;
 }
@@ -163,6 +172,20 @@ header.nav li:last-child {
 }
 
 header.nav li a {
+	color: #000;
+	font-weight: 300;
+}
+
+header.nav li:hover a {
+	color: var(--highlight);
+}
+
+header.nav.home-nav li a {
+	color: #fff;
+	transition: color .3s ease;
+}
+
+.scroll header.nav.home-nav li a {
 	color: #000;
 }
 
@@ -275,7 +298,6 @@ header.nav li a[aria-current] {
 
 .archive-container .article .thumbnail {
 	width: 100%;
-	border-radius: 8px;
 	height: 300px;
 }
 
@@ -287,7 +309,7 @@ header.nav li a[aria-current] {
 
 .archive-container .article .title {
 	font-size: 24px;
-	font-weight: 500;
+	font-weight: 400;
 	color: #000;
 }
 
@@ -327,7 +349,7 @@ header.nav li a[aria-current] {
 
 .newsletter-container p {
 	color: rgba(0, 0, 0, .7);
-	font-weight: 500;
+	font-weight: 400;
 }
 
 .newsletter-container .text-field,
@@ -404,6 +426,10 @@ footer .section-share i:hover {
 	transform: scale(1.1);
 }
 
+footer.home-footer {
+	top: 0px !important;
+}
+
 .main-container.woocommerce {
 	padding: 60px 168px;
 }
@@ -413,7 +439,6 @@ footer .section-share i:hover {
 	width: 100%;
 	margin-bottom: 10px;
 	transition: box-shadow .3s ease;
-	border-radius: 4px;
 }
 
 .woocommerce.shop .product .title {
@@ -435,7 +460,7 @@ footer .section-share i:hover {
 .woocommerce.shop .product .price {
 	color: var(--highlight);
 	font-size: 16px;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 .wc-home.main-container {
@@ -495,6 +520,10 @@ footer .section-share i:hover {
 	margin-bottom: 30px;
 }
 
+.home-container {
+	top: 0px;
+}
+
 .home-container .main-container.archive {
 	padding-top: 50px;
 	top: 0px;
@@ -505,7 +534,6 @@ footer .section-share i:hover {
 }
 
 .home-container .main-container.archive .cta-articles,
-.home-container .main-container.testimonials .cta-testimonials,
 .woocommerce .product .cart .button,
 .woocommerce a.button.alt,
 .woocommerce button.button.alt,
@@ -525,11 +553,7 @@ footer .section-share i:hover {
 
 .wpforms-form button[type=submit] {
 	color: #fff !important;
-	font-family: "Mulish", sans-serif;
-}
-
-.home-container .main-container.testimonials .cta-testimonials {
-	margin-bottom: 0px;
+	font-family: "Roboto", sans-serif;
 }
 
 .home-container .main-container.archive .grid-layout {
@@ -543,7 +567,7 @@ footer .section-share i:hover {
 }
 
 .glsr-reviews {
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	margin-bottom: 50px;
 }
 
@@ -757,7 +781,7 @@ div.wpforms-container-full .wpforms-form select.wpforms-field-medium,
 div.wpforms-container-full .wpforms-form .wpforms-field-row.wpforms-field-medium,
 div.wpforms-container-full .wpforms-form input.wpforms-field-medium {
 	max-width: 100%;
-	font-family: "Mulish", sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 
 .wpforms-field-container input,
@@ -770,4 +794,29 @@ div.wpforms-container-full .wpforms-form input.wpforms-field-medium {
 	color: #fff;
 	border: none;
 	border-radius: 4px;
+}
+
+.glsr-review-rating {
+	display: none !important;
+}
+
+.glsr-default .glsr-review>.glsr-review-rating+.glsr-review-date span {
+	margin-left: 0 !important;
+}
+
+.glsr-default .glsr-review {
+	display: block !important;
+}
+
+.glsr .glsr-pagination {
+	margin-top: -4rem;
+	float: right;
+}
+
+.glsr .glsr-pagination .pagination {
+	float: right;
+}
+
+.glsr-default .glsr-review>.glsr-review-title>* {
+	font-weight: 400 !important;
 }

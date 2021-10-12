@@ -1,5 +1,5 @@
 <?php
-	get_header();
+	get_header("home");
 ?>
 
 	<div class="main-container home-container">
@@ -51,11 +51,8 @@
 						echo '<h2 class="headline">' . get_option("testimonials_headline") . '</h2>';
 					}
 
-					echo do_shortcode("[site_reviews display='3']");
+					echo do_shortcode("[site_reviews display='4' pagination='ajax']");
 				?>
-				<a href="<?php echo get_post_type_archive_link('post'); ?>">
-					<div class="cta-testimonials">Tous les avis</div>
-				</a>
 			</div>
 		<?php } ?>
 		<!-- End Testimonials -->
@@ -104,7 +101,7 @@
 					<h2 class="headline"><?php echo get_option("instagram_headline"); ?></h2>
 				<?php
 					}
-					echo do_shortcode("[instagram-feed num=9 cols=3]");
+					echo do_shortcode("[instagram-feed num=12 cols=4]");
 				?>
 			</div>
 		<?php } ?>
@@ -118,5 +115,5 @@
 	</div>
 
 <?php
-	get_footer();
+	get_footer("home");
 ?>
