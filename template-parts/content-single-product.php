@@ -59,6 +59,11 @@ if ( post_password_required() ) {
 		 */
 		do_action( 'woocommerce_single_product_summary' );
 		?>
+		<div class="product-description">
+			<?php
+			echo $post->post_content;
+			?>
+		</div>
 	</div>
 
 	<?php

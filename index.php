@@ -3,6 +3,15 @@
 ?>
 
 	<div class="main-container archive">
+		<div class="archive-container-head">
+			<h2>"N'aie pas peur d'avancer lentement. Aie peur de rester immobile."</h2>
+			<p>
+				Comme moi vous vous souciez de l'avenir de notre planète ?
+				Vous avez déclaré la guerre aux produits chimiques qui envahissent notre quotidien ?
+				Vous êtes toujours à la recherche de bons plans pour tenter d'atteindre le graal du "zéro déchet" ?
+				Je partage avec vous mes trouvailles, mes astuces ainsi que des conseils pour bien utiliser mes produits ménagers 100% naturels !
+			</p>
+		</div>
 		<div class="archive-container grid-layout _3-grid">
 			<!-- Content -->
 			<?php
@@ -18,7 +27,7 @@
 
 		<?php
 
-		the_posts_pagination();
+			the_posts_pagination();
 
 		?>
 
