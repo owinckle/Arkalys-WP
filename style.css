@@ -21,6 +21,7 @@ body {
 :root {
 	--highlight: #006699;
 	--secondary: #dceaf7;
+	--third: rgb(151, 192, 232);
 	--simple-boxshadow: 0 0 10px 0px rgb(0 0 0 / 30%);
 }
 
@@ -857,4 +858,13 @@ div.wpforms-container-full .wpforms-form input.wpforms-field-medium {
 
 .glsr-default .glsr-review>.glsr-review-title>* {
 	font-weight: 400 !important;
+}
+
+.tables-container {
+	padding: 60px 168px;
+}
+
+.tables-container .headline {
+	text-align: center;
+	margin-bottom: 30px;
 }
