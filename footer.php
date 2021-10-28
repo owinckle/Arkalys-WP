@@ -44,6 +44,9 @@
 				$(".header-container").removeClass("scroll");
 			}
 		});
+
+		let burger = document.querySelector(".burger-container");
+		burger.addEventListener("click", () => burger.classList.toggle("animate"));
 	</script>
 	<?php
 		wp_footer();

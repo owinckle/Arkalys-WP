@@ -135,9 +135,9 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 header.nav {
-	padding: 25px 168px;
+	padding: 25px 375px;
 	display: flex;
-	width: calc(100% - 336px);
+	width: calc(100% - 375px - 375px);
 	align-items: center;
 	justify-content: space-between;
 	background: #fff;
@@ -867,4 +867,112 @@ div.wpforms-container-full .wpforms-form input.wpforms-field-medium {
 .tables-container .headline {
 	text-align: center;
 	margin-bottom: 30px;
+}
+
+.burger-container {
+	position: absolute;
+	top: 64px;
+	left: 30px;
+	cursor: pointer;
+	width: 40px;
+	height: 14px;
+	padding-top: 11px;
+}
+
+.burger-menu,
+.burger-menu:after,
+.burger-menu:before {
+	width: 40px;
+	height: 3px;
+}
+
+.burger-menu {
+	position: relative;
+	background: white;
+	transition: all 0ms 300ms;
+}
+.burger-menu.animate {
+	background: rgba(255, 255, 255, 0);
+}
+
+.burger-menu:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+	background: white;
+	transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.burger-menu:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 10px;
+	background: white;
+	transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.burger-menu.animate:after {
+	top: 0;
+	transform: rotate(45deg);
+	transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.burger-menu.animate:before {
+	bottom: 0;
+	transform: rotate(-45deg);
+	transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media only screen and (max-width: 1575px) {
+	header.nav {
+		padding: 25px 290px;
+		width: calc(100% - 290px - 290px);
+	}
+}
+
+@media only screen and (max-width: 1385px) {
+	header.nav {
+		padding: 25px 165px;
+		width: calc(100% - 165px - 165px);
+	}
+}
+
+@media only screen and (max-width: 1150px) {
+	header.nav {
+		padding: 25px 75px;
+		width: calc(100% - 75px - 75px);
+	}
+
+	.home-container .main-container.archive .grid-layout {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media only screen and (max-width: 960px) {
+	header.nav {
+		padding: 25px 20px;
+		width: calc(100% - 20px - 20px);
+	}
+}
+
+@media only screen and (max-width: 880px) {
+	.glsr .glsr-reviews {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.home-container .main-container.archive .grid-layout {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media only screen and (max-width: 860px) {
+	.glsr .glsr-reviews {
+		grid-template-columns: 1fr;
+	}
+
+	header.nav {
+		display: none;
+	}
 }

@@ -50,7 +50,10 @@
 						"items_wrap" => '<ul>%3$s</ul>'
 					)
 				);
-			?>
+		?>
 			<!-- End Primary Menu -->
 		</header>
+		<div class="burger-container">
+			<div class="burger-menu"></div>
+		</div>
 	</div>

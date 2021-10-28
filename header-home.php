@@ -28,12 +28,6 @@
 		?>
 		<header class="nav home-nav">
 			<!-- Logo -->
-		<!-- 	<?php
-				if (function_exists("the_custom_logo")) {
-					$custom_logo_id	= get_theme_mod("custom_logo");
-					$logo			= wp_get_attachment_image_src($custom_logo_id, "full");
-				}
-			?> -->
 			<a href="<?php echo get_home_url(); ?>">
 				<img class="logo" src="https://tantinotte-670ead.ingress-bonde.easywp.com/wp-content/uploads/2021/10/6f384b472fcff3b4da6fc31b40a82d78.png" alt="logo" />
 			</a>
@@ -50,7 +44,11 @@
 						"items_wrap" => '<ul>%3$s</ul>'
 					)
 				);
+
 			?>
 			<!-- End Primary Menu -->
 		</header>
+		<div class="burger-container">
+			<div class="burger-menu"></div>
+		</div>
 	</div>
