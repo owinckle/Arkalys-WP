@@ -14,7 +14,19 @@
 		wp_head();
 	?>
 </head>
-<body>
+<body class="home-body">
+	<?php
+
+		wp_nav_menu(
+			array(
+				"menu" => "mobile",
+				"container" => "",
+				"theme_location" => "mobile",
+				"items_wrap" => '<ul class="mobile-menu">%3$s</ul>'
+			)
+		);
+
+	?>
 	<div class="header-container">
 		<?php
 			if (get_option("announcement")) {
@@ -47,8 +59,13 @@
 
 			?>
 			<!-- End Primary Menu -->
+
+			<!-- Mobile Menu -->
+			<div class="mobile-menu-btn-container">
+				<div class="mobile-menu-btn"></div>
+				<div class="mobile-menu-btn"></div>
+				<div class="mobile-menu-btn"></div>
+			</div>
+			<!-- End Mobile Menu -->
 		</header>
-		<div class="burger-container">
-			<div class="burger-menu"></div>
-		</div>
 	</div>

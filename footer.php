@@ -45,8 +45,10 @@
 			}
 		});
 
-		let burger = document.querySelector(".burger-container");
-		burger.addEventListener("click", () => burger.classList.toggle("animate"));
+		$(".mobile-menu-btn-container").click(function() {
+			$(".mobile-menu").toggleClass("show");
+			$(".mobile-menu-btn-container").toggleClass("active");
+		});
 	</script>
 	<?php
 		wp_footer();

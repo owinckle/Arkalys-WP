@@ -109,7 +109,9 @@
 
 		<!-- Newsletter -->
 		<?php
-			get_template_part("template-parts/content", "newsletter");
+			if (get_option("newsletter")) {
+				get_template_part("template-parts/content", "newsletter");
+			}
 		?>
 		<!-- End Newsletter -->
 	</div>

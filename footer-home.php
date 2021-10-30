@@ -41,14 +41,18 @@
 			if (scroll >= 500) {
 				$("header.nav a img").attr("src", "https://tantinotte-670ead.ingress-bonde.easywp.com/wp-content/uploads/2021/10/6f6e28c0c7c582b195575db0bb3f5973.png");
 				$(".header-container").addClass("scroll");
+				$(".mobile-menu-btn-container").addClass("scroll");
 			} else {
 				$("header.nav a img").attr("src", "https://tantinotte-670ead.ingress-bonde.easywp.com/wp-content/uploads/2021/10/6f384b472fcff3b4da6fc31b40a82d78.png");
 				$(".header-container").removeClass("scroll");
+				$(".mobile-menu-btn-container").removeClass("scroll");
 			}
 		});
 
-		let burger = document.querySelector(".burger-menu");
-		burger.addEventListener("click", () => burger.classList.toggle("animate"));
+		$(".mobile-menu-btn-container").click(function() {
+			$(".mobile-menu").toggleClass("show");
+			$(".mobile-menu-btn-container").toggleClass("active");
+		});
 	</script>
 	<?php
 		wp_footer();
