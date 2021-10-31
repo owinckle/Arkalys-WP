@@ -84,11 +84,12 @@ function ark_settings() {
 				height: fit-content;
 				background: var(--secondary);
 				padding: 30px;
+				padding-left: 15px;
 			}
 			.form-table th {
 				color: rgba(255, 255, 255, .4);
 			}
-			input[type="text"], input[type="number"] {
+			input[type="text"], input[type="number"], select {
 				height: 20px !important;
 				padding: 10px !important;
 				margin-left: -10px;
@@ -97,7 +98,13 @@ function ark_settings() {
 				letter-spacing: 1px !important;
 				border: none !important;
 			}
-			input:focus {
+			select {
+				padding: 0px !important;
+				width: 45px;
+				text-align: center;
+				background: var(--primary) !important;
+			}
+			input:focus, select:focus {
 				border-color: var(--brand) !important;
 				box-shadow: 0 0 0 1px var(--brand) !important;
 			}
@@ -436,12 +443,17 @@ function ark_blog_title_fs() {
 */
 function ark_blog_title_fw() {
 	?>
-		<input
-			type="number"
-			name="blog_title_fw"
-			id="blog_title_fw"
-			value="<?php echo get_option('blog_title_fw'); ?>"
-		/>
+		<select name="blog_title_fw" id="blog_title_fw" value="<?php echo get_option('blog_title_fw'); ?>">
+			<option value="100" <?php if (get_option('blog_title_fw') == "100") echo "selected='selected'";?> >100</option>
+			<option value="200" <?php if (get_option('blog_title_fw') == "200") echo "selected='selected'";?> >200</option>
+			<option value="300" <?php if (get_option('blog_title_fw') == "300") echo "selected='selected'";?> >300</option>
+			<option value="400" <?php if (get_option('blog_title_fw') == "400") echo "selected='selected'";?> >400</option>
+			<option value="500" <?php if (get_option('blog_title_fw') == "500") echo "selected='selected'";?> >500</option>
+			<option value="600" <?php if (get_option('blog_title_fw') == "600") echo "selected='selected'";?> >600</option>
+			<option value="700" <?php if (get_option('blog_title_fw') == "700") echo "selected='selected'";?> >700</option>
+			<option value="800" <?php if (get_option('blog_title_fw') == "800") echo "selected='selected'";?> >800</option>
+			<option value="900" <?php if (get_option('blog_title_fw') == "900") echo "selected='selected'";?> >900</option>
+		</select>
 	<?php
 }
 
@@ -464,12 +476,17 @@ function ark_blog_excerpt_fs() {
 */
 function ark_blog_excerpt_fw() {
 	?>
-		<input
-			type="number"
-			name="blog_excerpt_fw"
-			id="blog_excerpt_fw"
-			value="<?php echo get_option('blog_excerpt_fw'); ?>"
-		/>
+		<select name="blog_excerpt_fw" id="blog_excerpt_fw" value="<?php echo get_option('blog_excerpt_fw'); ?>">
+			<option value="100" <?php if (get_option('blog_excerpt_fw') == "100") echo "selected='selected'";?> >100</option>
+			<option value="200" <?php if (get_option('blog_excerpt_fw') == "200") echo "selected='selected'";?> >200</option>
+			<option value="300" <?php if (get_option('blog_excerpt_fw') == "300") echo "selected='selected'";?> >300</option>
+			<option value="400" <?php if (get_option('blog_excerpt_fw') == "400") echo "selected='selected'";?> >400</option>
+			<option value="500" <?php if (get_option('blog_excerpt_fw') == "500") echo "selected='selected'";?> >500</option>
+			<option value="600" <?php if (get_option('blog_excerpt_fw') == "600") echo "selected='selected'";?> >600</option>
+			<option value="700" <?php if (get_option('blog_excerpt_fw') == "700") echo "selected='selected'";?> >700</option>
+			<option value="800" <?php if (get_option('blog_excerpt_fw') == "800") echo "selected='selected'";?> >800</option>
+			<option value="900" <?php if (get_option('blog_excerpt_fw') == "900") echo "selected='selected'";?> >900</option>
+		</select>
 	<?php
 }
 
@@ -492,12 +509,17 @@ function ark_blog_date_fs() {
 */
 function ark_blog_date_fw() {
 	?>
-		<input
-			type="number"
-			name="blog_date_fw"
-			id="blog_date_fw"
-			value="<?php echo get_option('blog_date_fw'); ?>"
-		/>
+		<select name="blog_date_fw" id="blog_date_fw" value="<?php echo get_option('blog_date_fw'); ?>">
+			<option value="100" <?php if (get_option('blog_date_fw') == "100") echo "selected='selected'";?> >100</option>
+			<option value="200" <?php if (get_option('blog_date_fw') == "200") echo "selected='selected'";?> >200</option>
+			<option value="300" <?php if (get_option('blog_date_fw') == "300") echo "selected='selected'";?> >300</option>
+			<option value="400" <?php if (get_option('blog_date_fw') == "400") echo "selected='selected'";?> >400</option>
+			<option value="500" <?php if (get_option('blog_date_fw') == "500") echo "selected='selected'";?> >500</option>
+			<option value="600" <?php if (get_option('blog_date_fw') == "600") echo "selected='selected'";?> >600</option>
+			<option value="700" <?php if (get_option('blog_date_fw') == "700") echo "selected='selected'";?> >700</option>
+			<option value="800" <?php if (get_option('blog_date_fw') == "800") echo "selected='selected'";?> >800</option>
+			<option value="900" <?php if (get_option('blog_date_fw') == "900") echo "selected='selected'";?> >900</option>
+		</select>
 	<?php
 }
 
@@ -575,19 +597,19 @@ function ark_admin_fields() {
 	add_settings_section("blog", "Blog", null, "theme-options");
 
 	// Blog Title
-	add_settings_field("blog_title_fs", "Blog Title Font Size", "ark_blog_title_fs", "theme-options", "blog");
+	add_settings_field("blog_title_fs", "Blog Title Font Size (PX)", "ark_blog_title_fs", "theme-options", "blog");
 	add_settings_field("blog_title_fw", "Blog Title Font Weight", "ark_blog_title_fw", "theme-options", "blog");
 	register_setting("section", "blog_title_fs");
 	register_setting("section", "blog_title_fw");
 
 	// Blog Exerpt
-	add_settings_field("blog_excerpt_fs", "Blog Excerpt Font Size", "ark_blog_excerpt_fs", "theme-options", "blog");
+	add_settings_field("blog_excerpt_fs", "Blog Excerpt Font Size (PX)", "ark_blog_excerpt_fs", "theme-options", "blog");
 	add_settings_field("blog_excerpt_fw", "Blog Excerpt Font Weight", "ark_blog_excerpt_fw", "theme-options", "blog");
 	register_setting("section", "blog_excerpt_fs");
 	register_setting("section", "blog_excerpt_fw");
 
 	// Blog Date
-	add_settings_field("blog_date_fs", "Blog Date Font Size", "ark_blog_date_fs", "theme-options", "blog");
+	add_settings_field("blog_date_fs", "Blog Date Font Size (PX)", "ark_blog_date_fs", "theme-options", "blog");
 	add_settings_field("blog_date_fw", "Blog Date Font Weight", "ark_blog_date_fw", "theme-options", "blog");
 	register_setting("section", "blog_date_fs");
 	register_setting("section", "blog_date_fw");
