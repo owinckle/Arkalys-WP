@@ -15,8 +15,9 @@ function ark_setup() {
 	// Register menus
 	$locations	= array(
 		"primary" => "Default Menu",
-		// "footer" => "Footer Menu",
-		"mobile" => "Mobile Menu"
+		"mobile" => "Mobile Menu",
+		"footer_left" => "Footer Left",
+		"footer_right" => "Footer Right"
 	);
 
 	register_nav_menus($locations);

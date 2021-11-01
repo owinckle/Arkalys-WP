@@ -27,12 +27,24 @@
 			</div>
 			<p class="copyright">Tantinotte.bio © Tous droits réservés</p>
 		</div>
-		<ul>
-			<li>Paiement et livraison</li>
-		</ul>
-		<ul>
-			<li>Mentions légales & confidentialité</li>
-		</ul>
+		<?php
+			wp_nav_menu(
+				array(
+					"menu" => "footer_left",
+					"container" => "",
+					"theme_location" => "footer_left",
+					"items_wrap" => '<ul>%3$s</ul>'
+				)
+			);
+			wp_nav_menu(
+				array(
+					"menu" => "footer_right",
+					"container" => "",
+					"theme_location" => "footer_right",
+					"items_wrap" => '<ul>%3$s</ul>'
+				)
+			);
+		?>
 	</footer>
 	<script type="text/javascript">
 		$(window).scroll(function() {

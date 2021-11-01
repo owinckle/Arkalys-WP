@@ -395,7 +395,6 @@ footer.home-footer {
 }
 
 footer img,
-footer .section-contact,
 footer ul,
 footer .section-share {
 	position: relative;
@@ -403,21 +402,22 @@ footer .section-share {
 	transform: translateX(-50%);
 }
 
-footer .section-contact,
 footer ul {
 	width: fit-content;
 }
 
-footer .section-contact,
 footer ul * {
 	display: inline-block;
 	clear: both;
 	float: left;
 }
 
-footer ul *,
-footer .section-contact * {
+footer ul * {
 	margin-bottom: 15px;
+}
+
+footer ul li a {
+	color: var(--highlight);
 }
 
 footer ul *:last-child {
